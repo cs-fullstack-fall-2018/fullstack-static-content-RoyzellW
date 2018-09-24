@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var path    = require("path");
+var path = require("path");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     console.log("Test!!!");
     res.render('index', { title: 'Express' });
+    res.render()
 });
 
 router.get('/architect', function(req, res, next) {
@@ -22,6 +23,9 @@ router.get('/band', function(req, res, next) {
 
 router.get('/food', function(req, res, next) {
     res.sendFile(path.join(__dirname+'/../public/food.html'))
+});
+router.get('/about', function(req, res, next) {
+    res.redirect('https://www.linkedin.com/feed/');
 });
 
 module.exports = router;
